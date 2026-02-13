@@ -29,7 +29,7 @@ const PRESETS = [
     name: 'Urban Reserve', 
     url: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1000&auto=format&fit=crop',
     coords: [34.0522, -118.2437], // Los Angeles, CA
-    bounds: [[34.04, -118.26], [34.06, -118.22]]
+    // Bounds removed to prevent overlay image from blocking map view
   },
   { 
     id: 3, 
@@ -117,18 +117,20 @@ export const MapExplorer = () => {
       // Remove existing overlay
       if (overlayRef.current) {
           overlayRef.current.remove();
+          overlayRef.current = null;
       }
 
-      // Add new overlay
+      // Add new overlay if bounds exist
       if (preset.bounds) {
-          // Add a rectangle to show the area
            overlayRef.current = L.imageOverlay(preset.url, preset.bounds, {
                opacity: 0.9,
                interactive: true
            }).addTo(map);
+      }
 
-           // Process image stats in background
-           processImageStats(preset.url);
+      // Process image stats in background if URL exists (even if not shown on map)
+      if (preset.url) {
+          processImageStats(preset.url);
       }
   };
 

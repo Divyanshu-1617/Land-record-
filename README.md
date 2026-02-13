@@ -1,20 +1,7 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Sample Hardhat 3 Beta Project (minimal)
 
-# Run and deploy your AI Studio app
+This project has a minimal setup of Hardhat 3 Beta, without any plugins.
 
-This contains everything you need to run your app locally.
+## What's included?
 
-View your app in AI Studio: https://ai.studio/apps/drive/1FO2yyyjdfED3f8TcgZcW846Mkf6R1NwC
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+The project includes native support for TypeScript, Hardhat scripts, tasks, and support for Solidity compilation and tests.

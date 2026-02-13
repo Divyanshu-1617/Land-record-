@@ -1,0 +1,27 @@
+export interface LandParcel {
+  id: string;
+  name: string;
+  location: string;
+  area: string;
+  status: 'Verified' | 'Pending' | 'Flagged';
+  owner: string;
+  hash: string; // Blockchain record hash
+  imageUrl: string;
+  lastAnalysis?: string;
+}
+
+export interface AnalysisResult {
+  suitabilityScore: number;
+  landUse: string;
+  cropRecommendations: string[];
+  risks: string[];
+  soilTypeEstimation: string;
+  summary: string;
+}
+
+export enum AppView {
+  DASHBOARD = 'DASHBOARD',
+  EXPLORER = 'EXPLORER',
+  RECORDS = 'RECORDS',
+  SETTINGS = 'SETTINGS'
+}
